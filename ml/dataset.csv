@@ -1,0 +1,82 @@
+text,emotion
+"I feel stressed about exams",stress
+"My heart is racing and I can't breathe",panic
+"I feel lonely even around people",loneliness
+"I feel angry at myself",anger
+"I feel exhausted all the time",fatigue
+"I don't feel motivated to study",low_motivation
+"I feel hopeless about my future",hopelessness
+"I hate myself",shame
+"I feel confused about everything",confusion
+"I feel overwhelmed with work",overwhelm
+"I feel depressed",depression
+"I am scared of failing",fear
+"I want to hurt myself",crisis
+"I feel fine today",normalatext,emotion
+"I feel stressed about exams",stress
+"I have too much syllabus and very little time",stress
+"Exams are putting too much pressure on me",stress
+
+"My heart is racing and I can't breathe",panic
+"I suddenly feel dizzy and scared",panic
+"I feel like something bad is going to happen",panic
+
+"I feel lonely even around people",loneliness
+"I feel like no one understands me",loneliness
+"I feel isolated from everyone",loneliness
+
+"I feel angry at myself",anger
+"I get irritated very easily these days",anger
+"I feel frustrated with everything",frustration
+
+"I feel exhausted all the time",fatigue
+"I feel tired even after sleeping",fatigue
+"I have no energy left",fatigue
+
+"I don't feel motivated to study",low_motivation
+"I don't feel like doing anything",low_motivation
+"I keep postponing my work",low_motivation
+
+"I feel hopeless about my future",hopelessness
+"I feel like nothing will improve",hopelessness
+"I feel stuck in life",hopelessness
+
+"I hate myself",shame
+"I feel ashamed of who I am",shame
+"I keep blaming myself",guilt
+
+"I feel confused about everything",confusion
+"I don’t know what to do next",confusion
+"I feel lost in my thoughts",confusion
+
+"I feel overwhelmed with work",overwhelm
+"Everything feels too much to handle",overwhelm
+"I feel mentally overloaded",overwhelm
+
+"I feel depressed",depression
+"I feel empty inside",depression
+"I feel numb most of the time",depression
+
+"I am scared of failing",fear
+"I am afraid of disappointing my parents",fear
+"I feel fearful about my results",fear
+
+"I doubt myself a lot",self_doubt
+"I feel like I'm not good enough",self_doubt
+"I lack confidence in myself",self_doubt
+
+"I feel burned out",burnout
+"I feel mentally drained",burnout
+"I feel tired of everything",burnout
+
+"I feel anxious for no reason",anxiety
+"My thoughts won’t stop racing",anxiety
+"I feel uneasy all the time",anxiety
+
+"I feel calm today",normal
+"I feel okay right now",normal
+"I feel fine today",normal
+
+"I want to hurt myself",crisis
+"I don’t want to live anymore",crisis
+"I feel like ending everything",crisis
