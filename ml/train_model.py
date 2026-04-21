@@ -8,7 +8,7 @@ import joblib
 data = pd.read_csv("dataset.csv")
 
 X = data["text"]
-y = data["label"]
+y = data["emotion"]
 
 # Create ML pipeline
 model = Pipeline([

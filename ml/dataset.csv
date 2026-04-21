@@ -1,82 +1,361 @@
 text,emotion
-"I feel stressed about exams",stress
-"My heart is racing and I can't breathe",panic
-"I feel lonely even around people",loneliness
-"I feel angry at myself",anger
-"I feel exhausted all the time",fatigue
-"I don't feel motivated to study",low_motivation
-"I feel hopeless about my future",hopelessness
-"I hate myself",shame
-"I feel confused about everything",confusion
-"I feel overwhelmed with work",overwhelm
-"I feel depressed",depression
-"I am scared of failing",fear
-"I want to hurt myself",crisis
-"I feel fine today",normalatext,emotion
-"I feel stressed about exams",stress
-"I have too much syllabus and very little time",stress
-"Exams are putting too much pressure on me",stress
-
-"My heart is racing and I can't breathe",panic
-"I suddenly feel dizzy and scared",panic
-"I feel like something bad is going to happen",panic
-
-"I feel lonely even around people",loneliness
-"I feel like no one understands me",loneliness
-"I feel isolated from everyone",loneliness
-
-"I feel angry at myself",anger
-"I get irritated very easily these days",anger
-"I feel frustrated with everything",frustration
-
-"I feel exhausted all the time",fatigue
-"I feel tired even after sleeping",fatigue
-"I have no energy left",fatigue
-
-"I don't feel motivated to study",low_motivation
-"I don't feel like doing anything",low_motivation
-"I keep postponing my work",low_motivation
-
-"I feel hopeless about my future",hopelessness
-"I feel like nothing will improve",hopelessness
-"I feel stuck in life",hopelessness
-
-"I hate myself",shame
-"I feel ashamed of who I am",shame
-"I keep blaming myself",guilt
-
-"I feel confused about everything",confusion
-"I don’t know what to do next",confusion
-"I feel lost in my thoughts",confusion
-
-"I feel overwhelmed with work",overwhelm
-"Everything feels too much to handle",overwhelm
-"I feel mentally overloaded",overwhelm
-
-"I feel depressed",depression
-"I feel empty inside",depression
-"I feel numb most of the time",depression
-
-"I am scared of failing",fear
-"I am afraid of disappointing my parents",fear
-"I feel fearful about my results",fear
-
-"I doubt myself a lot",self_doubt
-"I feel like I'm not good enough",self_doubt
-"I lack confidence in myself",self_doubt
-
-"I feel burned out",burnout
-"I feel mentally drained",burnout
-"I feel tired of everything",burnout
-
-"I feel anxious for no reason",anxiety
-"My thoughts won’t stop racing",anxiety
-"I feel uneasy all the time",anxiety
-
-"I feel calm today",normal
-"I feel okay right now",normal
-"I feel fine today",normal
-
-"I want to hurt myself",crisis
-"I don’t want to live anymore",crisis
-"I feel like ending everything",crisis
+I feel stressed about exams,stress
+Exams are stressing me out,stress
+I have too much syllabus to finish,stress
+Deadlines are making me stressed,stress
+I feel pressure from studies,stress
+I am overwhelmed with assignments,stress
+Too many exams coming up,stress
+I feel tense thinking about exams,stress
+I can’t handle exam pressure,stress
+I feel stressed about results,stress
+I feel anxious about my exams,stress
+I am worried about my preparation,stress
+My exams are giving me stress,stress
+I feel burdened by studies,stress
+I am stressed about deadlines,stress
+I feel exam stress every day,stress
+Studying is making me stressed,stress
+I feel pressure from academics,stress
+I can’t relax because of exams,stress
+I feel stressed thinking of failure,stress
+My workload is stressing me out,stress
+I feel constant exam stress,stress
+Assignments are stressing me out,stress
+I feel stressed with college work,stress
+I feel overwhelmed by studies,stress
+I feel academic pressure,stress
+I feel stressed with expectations,stress
+I feel tense all day,stress
+I feel stressed about performance,stress
+I feel drained from studies,stress
+My thoughts are racing constantly,anxiety
+I feel uneasy all the time,anxiety
+I feel anxious without reason,anxiety
+I can’t relax at all,anxiety
+I feel nervous about everything,anxiety
+I feel restless inside,anxiety
+I feel like something bad will happen,anxiety
+I can’t stop worrying,anxiety
+I feel panic coming suddenly,anxiety
+My mind won’t calm down,anxiety
+I feel anxious before exams,anxiety
+I feel nervous about results,anxiety
+I feel worried all day,anxiety
+I feel anxious about my future,anxiety
+I feel fear and anxiety together,anxiety
+I feel tense and uneasy,anxiety
+I feel like I can’t breathe properly,anxiety
+I feel anxious about everything,anxiety
+I feel constant worry,anxiety
+I feel anxious for no reason,anxiety
+I feel nervous and shaky,anxiety
+I feel uneasy in crowds,anxiety
+I feel panic in my chest,anxiety
+I feel anxiety building up,anxiety
+I feel scared and anxious,anxiety
+I feel my heart racing,anxiety
+I feel anxious before sleeping,anxiety
+I feel overwhelmed with anxiety,anxiety
+I feel anxious about tomorrow,anxiety
+I feel constant tension,anxiety
+I feel empty inside,sadness
+I feel very low today,sadness
+I don’t feel like talking to anyone,sadness
+I feel emotionally drained,sadness
+I feel down all day,sadness
+I feel like crying,sadness
+I feel disconnected from everything,sadness
+Nothing makes me happy,sadness
+I feel lonely,sadness
+I feel hopeless,sadness
+I feel sad without reason,sadness
+I feel low and tired,sadness
+I feel like I have no purpose,sadness
+I feel alone even with people,sadness
+I feel empty and numb,sadness
+I feel emotionally weak,sadness
+I feel down about life,sadness
+I feel like crying every day,sadness
+I feel lost and sad,sadness
+I feel like nothing matters,sadness
+I feel sad about my future,sadness
+I feel no happiness,sadness
+I feel broken inside,sadness
+I feel isolated,sadness
+I feel sadness constantly,sadness
+I feel tired and sad,sadness
+I feel low energy,sadness
+I feel like giving up,sadness
+I feel mentally down,sadness
+I feel emotionally hurt,sadness
+I feel angry at myself,anger
+I get irritated easily,anger
+I feel frustrated,anger
+I snap at people quickly,anger
+I feel annoyed all the time,anger
+I feel rage building up,anger
+I am losing patience,anger
+Everything makes me angry,anger
+I feel aggressive,anger
+I feel irritated without reason,anger
+I feel angry about small things,anger
+I feel frustrated with everything,anger
+I feel anger inside me,anger
+I feel irritated by people,anger
+I feel annoyed quickly,anger
+I feel short-tempered,anger
+I feel angry at situations,anger
+I feel constant irritation,anger
+I feel anger rising,anger
+I feel angry about my life,anger
+I feel upset and angry,anger
+I feel frustrated at myself,anger
+I feel annoyed all day,anger
+I feel aggressive sometimes,anger
+I feel anger for no reason,anger
+I feel irritated constantly,anger
+I feel angry about work,anger
+I feel annoyed with everything,anger
+I feel angry and tense,anger
+I feel emotionally angry,anger
+I feel tired all the time,fatigue
+I feel exhausted,fatigue
+I have no energy,fatigue
+I feel drained,fatigue
+I feel sleepy all day,fatigue
+I feel physically weak,fatigue
+I feel mentally tired,fatigue
+I feel burnout,fatigue
+I can’t stay active,fatigue
+I feel worn out,fatigue
+I feel tired even after rest,fatigue
+I feel low energy,fatigue
+I feel fatigued constantly,fatigue
+I feel weak and tired,fatigue
+I feel drained from work,fatigue
+I feel no strength,fatigue
+I feel sleepy always,fatigue
+I feel tired mentally,fatigue
+I feel physically exhausted,fatigue
+I feel energyless,fatigue
+I feel sluggish,fatigue
+I feel drained all day,fatigue
+I feel tired and weak,fatigue
+I feel fatigue constantly,fatigue
+I feel mentally exhausted,fatigue
+I feel drained emotionally,fatigue
+I feel tired from stress,fatigue
+I feel low stamina,fatigue
+I feel exhausted daily,fatigue
+I feel worn out mentally,fatigue
+I don’t feel motivated,low_motivation
+I keep procrastinating,low_motivation
+I don’t want to study,low_motivation
+I lack focus,low_motivation
+I feel lazy to work,low_motivation
+I can’t start tasks,low_motivation
+I keep delaying everything,low_motivation
+I feel unproductive,low_motivation
+I don’t feel driven,low_motivation
+I feel stuck doing nothing,low_motivation
+I don’t feel like doing anything,low_motivation
+I lack interest in work,low_motivation
+I feel no motivation today,low_motivation
+I feel distracted,low_motivation
+I can’t concentrate,low_motivation
+I feel demotivated,low_motivation
+I feel no energy to work,low_motivation
+I feel unproductive all day,low_motivation
+I don’t feel like studying,low_motivation
+I feel lazy and unmotivated,low_motivation
+I feel no interest in tasks,low_motivation
+I feel disengaged,low_motivation
+I feel no drive,low_motivation
+I feel stuck and unmotivated,low_motivation
+I feel bored to work,low_motivation
+I feel low motivation daily,low_motivation
+I feel inactive,low_motivation
+I feel lazy all day,low_motivation
+I feel no initiative,low_motivation
+I feel like avoiding work,low_motivation
+I feel nothing will improve,hopelessness
+I feel stuck in life,hopelessness
+I feel lost about my future,hopelessness
+I feel like giving up,hopelessness
+I feel no hope left,hopelessness
+I feel everything is pointless,hopelessness
+I feel trapped,hopelessness
+I see no way forward,hopelessness
+I feel like nothing matters,hopelessness
+I feel helpless,hopelessness
+I feel hopeless about life,hopelessness
+I feel no future ahead,hopelessness
+I feel like nothing will change,hopelessness
+I feel stuck forever,hopelessness
+I feel lost and hopeless,hopelessness
+I feel no progress,hopelessness
+I feel no purpose,hopelessness
+I feel life is meaningless,hopelessness
+I feel no way out,hopelessness
+I feel empty about future,hopelessness
+I feel no improvement,hopelessness
+I feel like quitting life,hopelessness
+I feel hopeless daily,hopelessness
+I feel no success ahead,hopelessness
+I feel life is stuck,hopelessness
+I feel directionless and hopeless,hopelessness
+I feel no opportunities,hopelessness
+I feel like ending everything,hopelessness
+I feel no growth,hopelessness
+I feel nothing will work,hopelessness
+I feel confused about everything,confusion
+I don’t know what to do,confusion
+I feel lost,confusion
+I can’t think clearly,confusion
+I feel mentally foggy,confusion
+I feel uncertain,confusion
+I feel directionless,confusion
+I feel unsure about decisions,confusion
+I feel distracted,confusion
+I feel unclear about my goals,confusion
+I feel confused about my future,confusion
+I don’t understand anything,confusion
+I feel lost in thoughts,confusion
+I feel uncertain about choices,confusion
+I feel unclear about next steps,confusion
+I feel puzzled,confusion
+I feel confused constantly,confusion
+I feel unsure about life,confusion
+I feel mixed thoughts,confusion
+I feel unclear mentally,confusion
+I feel mentally confused,confusion
+I feel directionless today,confusion
+I feel lost about decisions,confusion
+I feel unsure always,confusion
+I feel confused daily,confusion
+I feel like I don’t know anything,confusion
+I feel unclear in mind,confusion
+I feel confused about everything again,confusion
+I feel uncertain all day,confusion
+I feel mentally lost,confusion
+I feel overwhelmed,overwhelm
+Everything feels too much,overwhelm
+I can’t handle this workload,overwhelm
+I feel overloaded,overwhelm
+I feel pressure from all sides,overwhelm
+I feel mentally overloaded,overwhelm
+I feel suffocated by tasks,overwhelm
+I feel buried in work,overwhelm
+I feel stretched too thin,overwhelm
+I feel like I can't keep up,overwhelm
+I feel overwhelmed with studies,overwhelm
+I feel too much pressure,overwhelm
+I feel overloaded with tasks,overwhelm
+I feel too many responsibilities,overwhelm
+I feel like I can’t manage,overwhelm
+I feel overwhelmed daily,overwhelm
+I feel everything piling up,overwhelm
+I feel too stressed out,overwhelm
+I feel burdened by tasks,overwhelm
+I feel overloaded mentally,overwhelm
+I feel overwhelmed constantly,overwhelm
+I feel too much work,overwhelm
+I feel pressure everywhere,overwhelm
+I feel suffocated mentally,overwhelm
+I feel overwhelmed about life,overwhelm
+I feel like drowning in tasks,overwhelm
+I feel mentally crowded,overwhelm
+I feel overwhelmed by responsibilities,overwhelm
+I feel too much going on,overwhelm
+I feel overwhelmed by everything,overwhelm
+I am scared of failing,fear
+I feel afraid of results,fear
+I feel fear about future,fear
+I am afraid of disappointment,fear
+I feel scared of exams,fear
+I feel nervous about outcomes,fear
+I fear failure,fear
+I feel worried about mistakes,fear
+I feel fear inside,fear
+I feel anxious about performance,fear
+I feel scared about future,fear
+I feel afraid of failing exams,fear
+I feel fear of rejection,fear
+I feel worried about my future,fear
+I feel scared of losing, fear
+I feel fear about results,fear
+I feel anxious about failure,fear
+I feel scared of judgement,fear
+I feel fear constantly,fear
+I feel worried about everything,fear
+I feel scared inside,fear
+I feel afraid daily,fear
+I feel nervous and scared,fear
+I feel fear about life,fear
+I feel scared to try,fear
+I feel fear about mistakes,fear
+I feel scared about outcomes,fear
+I feel afraid of people,fear
+I feel fear about future plans,fear
+I feel anxious and fearful,fear
+I feel okay,normal
+I feel fine today,normal
+I feel calm,normal
+I feel relaxed,normal
+I feel normal,normal
+I feel good,normal
+I feel peaceful,normal
+I feel stable,normal
+I feel alright,normal
+I feel balanced,normal
+I feel calm and relaxed,normal
+I feel okay today,normal
+I feel peaceful today,normal
+I feel normal again,normal
+I feel fine and stable,normal
+I feel relaxed today,normal
+I feel calm all day,normal
+I feel good about life,normal
+I feel okay mentally,normal
+I feel fine emotionally,normal
+I feel neutral,normal
+I feel stable and calm,normal
+I feel alright today,normal
+I feel relaxed and peaceful,normal
+I feel good inside,normal
+I feel okay overall,normal
+I feel calm inside,normal
+I feel balanced mentally,normal
+I feel fine and calm,normal
+I feel okay right now,normal
+I want to hurt myself,crisis
+I don’t want to live,crisis
+I feel like ending everything,crisis
+I feel like harming myself,crisis
+I feel suicidal,crisis
+I feel like giving up completely,crisis
+I don’t see a reason to live,crisis
+I feel like disappearing,crisis
+I feel like I can't go on,crisis
+I feel like hurting myself badly,crisis
+I feel like ending my life,crisis
+I feel suicidal thoughts,crisis
+I feel like dying,crisis
+I feel like I want to disappear,crisis
+I feel no reason to live,crisis
+I feel like harming myself,crisis
+I feel like giving up life,crisis
+I feel suicidal constantly,crisis
+I feel like hurting myself,crisis
+I feel like ending it all,crisis
+I feel no purpose to live,crisis
+I feel like I can't continue,crisis
+I feel like quitting life,crisis
+I feel suicidal daily,crisis
+I feel like dying inside,crisis
+I feel like I want to die,crisis
+I feel no hope to live,crisis
+I feel like harming myself again,crisis
+I feel like disappearing forever,crisis
+I feel like ending everything now,crisis

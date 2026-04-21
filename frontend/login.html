@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: system-ui;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+.card {
+  background:rgba(0,0,0,0.7);
+  padding:25px;
+  border-radius:12px;
+  width:300px;
+  color:white;
+}
+input {
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:6px;
+  border:none;
+}
+button {
+  width:100%;
+  padding:10px;
+  background:#6cb2ff;
+  border:none;
+  border-radius:6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Login</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+<br><br>
+<button onclick="goSignup()">Create Account</button>
+</div>
+
+<script>
+// ❌ REMOVED infinite redirect
+// ❌ REMOVED chat logic
+// ❌ REMOVED invalid DOM access
+
+async function login() {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!email || !password) {
+    alert("Enter email and password");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || !data.success) {
+      alert("Invalid login");
+      return;
+    }
+
+    // ✅ store session
+    localStorage.setItem("userEmail", data.user.email);
+    localStorage.setItem("userName", data.user.name);
+
+    // ✅ redirect to chat
+    window.location.href = "chat.html";
+
+  } catch (err) {
+    console.error(err);
+    alert("Server error");
+  }
+}
+
+function goSignup() {
+  window.location.href = "signup.html";
+}
+</script>
+
+</body>
+</html>

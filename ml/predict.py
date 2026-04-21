@@ -28,4 +28,4 @@ else:
 
 # ---------------- OUTPUT ----------------
 # Format: emotion|confidence
-print(f"{prediction}|{confidence:.2f}")
+print(prediction)
