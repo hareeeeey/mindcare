@@ -3,21 +3,21 @@ import os
 import joblib
 import numpy as np
 
-# ---------------- PATH FIX ----------------
+#  PATH FIX 
 BASE_DIR = os.path.dirname(__file__)
 MODEL_PATH = os.path.join(BASE_DIR, "emotion_model.pkl")
 
 # Load trained model safely
 model = joblib.load(MODEL_PATH)
 
-# ---------------- INPUT ----------------
+#  INPUT 
 if len(sys.argv) < 2:
     print("normal|0.00")
     sys.exit(0)
 
 text = sys.argv[1]
 
-# ---------------- PREDICTION ----------------
+#  PREDICTION 
 prediction = model.predict([text])[0]
 
 # Confidence score
@@ -26,6 +26,6 @@ if hasattr(model, "predict_proba"):
 else:
     confidence = 0.50  # fallback
 
-# ---------------- OUTPUT ----------------
+#  OUTPUT 
 # Format: emotion|confidence
 print(prediction)

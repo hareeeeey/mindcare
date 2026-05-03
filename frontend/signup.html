@@ -1,71 +1,262 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mindcare</title>
+
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 body {
-  font-family: system-ui;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #0a1a2f 0%, #000 70%);
+    color: white;
 }
-.card {
-  background:rgba(0,0,0,0.7);
-  padding:25px;
-  border-radius:12px;
-  width:300px;
-  color:white;
+
+.container {
+    width: 420px;
+    text-align: center;
 }
-input {
-  width:100%;
-  padding:10px;
-  margin-bottom:10px;
-  border-radius:6px;
-  border:none;
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
 }
-button {
-  width:100%;
-  padding:10px;
-  background:#6cb2ff;
-  border:none;
-  border-radius:6px;
+
+.logo-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-image: url("Vector.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.logo-text {
+    font-size: 28px;
+    color: #d1d5db;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #1f2937;
+    background: #111;
+    color: white;
+}
+
+/* eye button */
+.eye-btn {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+/* emotions */
+.emotions {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.emotions button {
+    padding: 12px;
+    border-radius: 24px;
+    border: 1px solid #374151;
+    background: transparent;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.emotions button:hover {
+    border-color: #3b82f6;
+    color: white;
+}
+
+.emotions button.active {
+    border-color: #3b82f6;
+    background: #1e3a5f;
+    color: white;
+    box-shadow: 0 0 15px rgba(59,130,246,0.5);
+}
+
+.create-btn {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: #1e3a5f;
+    color: white;
+    cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-<h2>Signup</h2>
+<div class="container">
 
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
+    <div class="logo">
+        <div class="logo-circle"></div>
+        <div class="logo-text">Mindcare</div>
+    </div>
 
-<button onclick="signup()">Create Account</button>
+    <h1>Welcome to Mindcare</h1>
+
+    <!-- NEW NAME FIELD -->
+    <div class="input-group">
+        <label>Name</label>
+        <input type="text" id="name">
+    </div>
+
+    <div class="input-group">
+        <label>Email</label>
+        <input type="text" id="username">
+    </div>
+
+    <div class="input-group">
+        <label>Password</label>
+        <input type="password" id="password">
+        <span class="eye-btn" onclick="peekPassword()">👁</span>
+    </div>
+
+    <div class="emotions">
+        <button type="button" data-emotion="stress">Stress</button>
+        <button type="button" data-emotion="anxiety">Anxiety</button>
+        <button type="button" data-emotion="nervousness">Nervousness</button>
+        <button type="button" data-emotion="calm">Calm</button>
+    </div>
+
+    <button class="create-btn" onclick="signup()">Create Account</button>
+
 </div>
 
 <script>
+let selectedEmotion = "";
+
+/* emotion select */
+document.querySelectorAll(".emotions button").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".emotions button")
+            .forEach(b => b.classList.remove("active"));
+
+        btn.classList.add("active");
+        selectedEmotion = btn.dataset.emotion;
+    });
+});
+
+/* password peek */
+function peekPassword() {
+    const input = document.getElementById("password");
+    input.type = "text";
+
+    setTimeout(() => {
+        input.type = "password";
+    }, 1000);
+}
+
+/* signup */
 async function signup() {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    const name = document.getElementById("name").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-  const res = await fetch("http://localhost:3000/signup", {
-    method: "POST",
-    headers: {"Content-Type":"application/json"},
-    body: JSON.stringify({ name, email, password })
-  });
+    if (!name || !username || !password || !selectedEmotion) {
+        alert("Please fill all fields");
+        return;
+    }
 
-  const data = await res.json();
+    // ✅ Gmail-only validation
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!gmailRegex.test(username)) {
+        alert("Please enter a valid Gmail ID (example@gmail.com)");
+        return;
+    }
 
-  if (data.success) {
-    alert("Account created");
-    window.location.href = "login.html";
-  } else {
-    alert(data.message);
-  }
+    if (username.length < 3) {
+        alert("Email must be valid");
+        return;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return;
+    }
+
+    if (!/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+        alert("Password must contain 1 capital letter and 1 number");
+        return;
+    }
+
+    try {
+        const res = await fetch("http://localhost:3000/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name,
+                username,
+                password,
+                emotion: selectedEmotion
+            })
+        });
+
+        const data = await res.json();
+
+        if (!data.success) {
+            alert(data.message);
+            return;
+        }
+
+        // store for later
+        localStorage.setItem("lastSignupUser", username);
+        localStorage.setItem("name", name);
+
+        alert("Account created successfully. Please login.");
+
+        window.location.href = "login.html";
+
+    } catch (err) {
+        alert("Server error");
+    }
 }
 </script>
 

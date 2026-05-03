@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mindcare Chat</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #0b0b0b;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recents h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #d1d5db;
+}
+
+.recent-item {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    color: #9ca3af;
+    cursor: pointer;
+}
+
+.recent-item.active {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-image: url("Vector.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+}
+
+/* NEW CHAT BUTTON */
+.new-chat {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid #2563eb;
+    background: #000000;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(37,99,235,0.5);
+}
+
+/* CENTER CONTENT */
+.center {
+    margin-top: 100px;
+}
+
+.intro {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #e5e7eb;
+}
+
+/* SUGGESTIONS */
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.suggestions button {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid #374151;
+    background: transparent;
+    color: #d1d5db;
+    cursor: pointer;
+}
+
+/* CHAT AREA */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+
+/* MESSAGE */
+.message {
+    margin-bottom: 18px;
+    line-height: 1.7;
+    font-size: 14px;
+    max-width: 75%;
+    white-space: pre-wrap;
+}
+
+.user {
+    margin-left: auto;
+    text-align: right;
+    background: #1e3a5f;
+    padding: 12px 16px;
+    border-radius: 16px;
+}
+
+.bot {
+    margin-right: auto;
+    text-align: left;
+    background: #111;
+    padding: 14px 16px;
+    border-radius: 16px;
+}
+
+/* INPUT BAR */
+.input-bar {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid #1f2937;
+    background: #0b0b0b;
+    box-shadow: 0 0 20px rgba(37,99,235,0.3);
+}
+
+.input-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+
+.send-btn {
+    background: #1e3a5f;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <div class="recents">
+        <h3>Recents</h3>
+        <div id="history"></div>
+    </div>
+
+    <div class="logo">
+        <div class="logo-circle"></div>
+        <span>Mindcare</span>
+    </div>
+</div>
+
+<div class="main">
+
+    <button class="new-chat" onclick="clearChat()">New Chat</button>
+
+    <div class="center" id="centerContent">
+        <div class="intro">Hello User, how can I help you today?</div>
+
+        <div class="suggestions">
+            <button onclick="sendSuggestion('I’m feeling stressed')">I’m feeling stressed</button>
+            <button onclick="sendSuggestion('I’m feeling anxious')">I’m feeling anxious</button>
+            <button onclick="sendSuggestion('I’m feeling nervous')">I’m feeling nervous</button>
+            <button onclick="sendSuggestion('Meditation Tips')">Meditation Tips</button>
+        </div>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="input-bar">
+        <input type="text" id="input" placeholder="Enter your text here"/>
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script>
+const chatBox = document.getElementById("chatBox");
+const historyDiv = document.getElementById("history");
+
+/* AUTH */
+const username = localStorage.getItem("username");
+if (!username) {
+    alert("Please login first");
+    window.location.href = "login.html";
+}
+
+const name = localStorage.getItem("name") || "User";
+
+/* GREETING */
+document.querySelector(".intro").innerText =
+    `Hello ${name}, how can I help you today?`;
+
+/* HISTORY */
+let history = JSON.parse(localStorage.getItem("chatHistory")) || [];
+
+function renderHistory() {
+    historyDiv.innerHTML = "";
+    history.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "recent-item";
+        div.innerText = item;
+        div.onclick = () => sendMessage(item);
+        historyDiv.appendChild(div);
+    });
+}
+
+/* FORMAT TEXT CLEANLY */
+function formatText(text) {
+    return text
+        .replace(/\*\*(.*?)\*\*/g, "$1")   // remove bold markdown
+        .replace(/\n/g, "<br>");          // proper spacing
+}
+
+/* ADD MESSAGE */
+function addMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = `message ${type}`;
+
+    div.innerHTML = formatText(text);
+
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+/* SEND MESSAGE */
+async function sendMessage(customText) {
+    const input = document.getElementById("input");
+    const text = customText || input.value;
+
+    if (!text) return;
+
+    document.getElementById("centerContent").style.display = "none";
+
+    addMessage(text, "user");
+
+    history.unshift(text);
+    history = [...new Set(history)].slice(0, 6);
+    localStorage.setItem("chatHistory", JSON.stringify(history));
+    renderHistory();
+
+    input.value = "";
+
+    try {
+        const res = await fetch("http://localhost:3000/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-auth": username
+            },
+            body: JSON.stringify({ message: text })
+        });
+
+        const data = await res.json();
+
+        addMessage(data.reply || "No response", "bot");
+
+    } catch (err) {
+        addMessage("Server error. Try again.", "bot");
+    }
+}
+
+/* SUGGESTIONS */
+function sendSuggestion(text) {
+    sendMessage(text);
+}
+
+/* CLEAR CHAT */
+function clearChat() {
+    chatBox.innerHTML = "";
+    document.getElementById("centerContent").style.display = "block";
+}
+
+/* ENTER KEY */
+document.getElementById("input").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        sendMessage();
+    }
+});
+
+renderHistory();
+</script>
+
+</body>
+</html>
